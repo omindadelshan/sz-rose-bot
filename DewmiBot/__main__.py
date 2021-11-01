@@ -62,15 +62,16 @@ from DewmiBot.modules.helper_funcs.misc import paginate_modules
 from DewmiBot.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = """
-Hey there!👋  My name is Rose ✨
+Hey! I Am Kingster Bot ✨
 
-I can manage your group with lots of useful features, feel free to add me to your group.
-"""
+I Can Manage Your Group from coll moduals.
+Fell fee to add me your group 😎"""
 
 HELP_STRINGS = f"""
-*Rose Help Menu*
-/donate ** me  Keep this service alive ** 🥺
-𝑻𝒉𝒆 𝒇𝒐𝒍𝒍𝒐𝒘𝒊𝒏𝒈 𝒇𝒖𝒏𝒄𝒕𝒊𝒐𝒏𝒔 𝒘𝒊𝒍𝒍 𝒉𝒆𝒍𝒑𝒇𝒖𝒍 𝒕𝒐 𝒚𝒐𝒖 𝒕𝒐 𝒎𝒂𝒏𝒂𝒈𝒆 𝒚𝒐𝒖𝒓 𝒈𝒓𝒐𝒖𝒑🙂
+**Kingster Help Menu 😉**
+  
+  /start - Start Me ✨
+  /help - get Help amenu ✨
 """.format(
     dispatcher.bot.first_name,
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
@@ -83,11 +84,7 @@ DONATE_STRING = """
 𝑺𝒖𝒑𝒑𝒐𝒓𝒕 𝒕𝒉𝒆𝒎 [Youtube](https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA)
 """
 STICKERS = (
-      "CAACAgUAAxkDAAJRk2EsmXHM9GX2AsHafVBSXmrsqJPeAAIRAwACHUmhVNYuprqSm_zGIAQ",
-      "CAACAgUAAxkBAAJbomEwT4YK4MGcUjWGrI4EOnHeXQUbAAKwAgACPcJIVXi-ppqwxSowIAQ",
-      "CAACAgUAAxkBAAJbpGEwT5aR7NWPjoRgHRl8oP-B21AoAALuAwACRLqpVJ_AVXE8L5zHIAQ",
-      "CAACAgUAAxkBAAJbn2EwT3Wb7egQtnn42LQuvp6Zw1DVAAJnBAACVptJVagLM1hpehzFIAQ",
-      "CAACAgUAAxkBAAJbnGEwT2VEStWCJIXIwIEu8rlSwU9MAALQAwACubJIVWAarwqi9W7LIAQ",
+      "CAACAgUAAxkBAAEC9Cxhf3qxq1OrK2XFtYnDvwTxHcm5SQACDAMAAi34-FdTA9EQgd9bySEE"
 )    
 
 ROSE = ("🎯Updates:- @sl_bot_zone",
@@ -98,22 +95,16 @@ ROSE = ("🎯Updates:- @sl_bot_zone",
 BUTTONS = [
     [
         InlineKeyboardButton(
-            text="➕️ 𝐀𝐃𝐃 𝐌𝐄 𝐓𝐎 𝐘𝐎𝐔𝐑 𝐆𝐑𝐎𝐔𝐏 ➕️", url="http://t.me/szrosebot?startgroup=true"),
+            text="➕️ ADD Me Your Group ➕️",url="http://t.me/szrosebot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="📢 Bot updates ", url=f"https://t.me/sl_bot_zone"),
+        InlineKeyboardButton(text="🎲 About 🎲", callback_data="aboutmanu_howto"),
         InlineKeyboardButton(
-            text="Repo 📦", url=f"https://github.com/youtubeslgeekshow"
+            text="🎉 Settings 🎉", callback_data="aboutmanu_"
         ),
     ],
     [
-        InlineKeyboardButton(text="Info & about 💁‍♀️", callback_data="aboutmanu_howto"),
-        InlineKeyboardButton(
-            text=" More 💫", callback_data="aboutmanu_"
-        ),
-    ],
-    [
-        InlineKeyboardButton(text="🧰 Help & commands 🛠 ", callback_data="help_back"),
+        InlineKeyboardButton(text"🎃 Help Commands 🎃", callback_data="help_back"),
     ],
 ]
 IMPORTED = {}
@@ -304,7 +295,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "*｢｢  𝗛𝗲𝗹𝗽  𝗳𝗼𝗿  {}  𝗺𝗼𝗱𝘂𝗹𝗲 」」😊*\𝗻".format(
+                "*💠 Help From {} Modual 💠*\𝗻".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
