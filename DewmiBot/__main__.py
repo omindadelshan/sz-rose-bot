@@ -84,7 +84,7 @@ You Can Donate Orginal writ's from base code,
 Support Them [Channal](https://t.me/szteambots)
 """
 STICKERS = (
-      "CAACAgUAAxkBAAEC9Cxhf3qxq1OrK2XFtYnDvwTxHcm5SQACDAMAAi34-FdTA9EQgd9bySEE"
+      "CAACAgUAAxkBAAEC9CxhgiUrGUBCWgmYRwABSYuemRBEy7UAAgwDAAIt-PhXUwPREIHfW8khBA"
 )    
 
 ROSE = ("🎯Updates:- @sl_bot_zone",
