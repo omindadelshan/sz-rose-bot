@@ -62,16 +62,16 @@ from DewmiBot.modules.helper_funcs.misc import paginate_modules
 from DewmiBot.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = """
-Hey! I Am Kingster Bot ✨
+Hey there!👋  My name is Kingster ✨
 
-I Can Manage Your Group from coll moduals.
-Fell fee to add me your group 😎"""
+I can manage your group with lots of powerfull features, feel free to add me to your group. 🍀"""
 
 HELP_STRINGS = f"""
 **Kingster Help Menu 😉**
-  
-  /start - Start Me ✨
-  /help - get Help amenu ✨
+
+/start - I Am Alive Or No 🎉
+/help - Get In Help Menu 🎉
+/settings - But Me Report 🎉
 """.format(
     dispatcher.bot.first_name,
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
@@ -79,9 +79,9 @@ HELP_STRINGS = f"""
 
 
 DONATE_STRING = """
-𝑯𝒆𝒚𝒂, 𝒈𝒍𝒂𝒅 𝒕𝒐 𝒉𝒆𝒂𝒓 𝒚𝒐𝒖 𝒘𝒂𝒏𝒕 𝒕𝒐 𝒅𝒐𝒏𝒂𝒕𝒆!
-𝒀𝒐𝒖 𝒄𝒂𝒏 𝒅𝒐𝒏𝒂𝒕𝒆 𝒕𝒐 𝒕𝒉𝒆 𝒐𝒓𝒊𝒈𝒊𝒏𝒂𝒍 𝒘𝒓𝒊𝒕𝒆𝒓'𝒔 𝒐𝒇 𝒕𝒉𝒆 𝑩𝒂𝒔𝒆 𝒄𝒐𝒅𝒆,
-𝑺𝒖𝒑𝒑𝒐𝒓𝒕 𝒕𝒉𝒆𝒎 [Youtube](https://www.youtube.com/channel/UCvYfJcTr8RY72dIapzMqFQA)
+Heya, Glad To You Want Donante !
+You Can Donate Orginal writ's from base code,
+Support Them [Channal](https://t.me/szteambots)
 """
 STICKERS = (
       "CAACAgUAAxkBAAEC9Cxhf3qxq1OrK2XFtYnDvwTxHcm5SQACDAMAAi34-FdTA9EQgd9bySEE"
@@ -89,18 +89,18 @@ STICKERS = (
 
 ROSE = ("🎯Updates:- @sl_bot_zone",
         "🎯Support:- @slbotzone",
-        "🎯Developer:- @supunmabot",
+        "🎯Developer:- @omindas",
 )
 
 BUTTONS = [
     [
         InlineKeyboardButton(
-            text="➕️ ADD Me Your Group ➕️",url="http://t.me/szrosebot?startgroup=true"),
+            text="➕️ ADD Me Your Group ➕️",url="http://t.me/szkingster_bot?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="🎲 About 🎲", callback_data="aboutmanu_howto"),
+        InlineKeyboardButton(text="👽 About 👽", callback_data="aboutmanu_howto"),
         InlineKeyboardButton(
-            text="🎉 Settings 🎉", callback_data="aboutmanu_"
+            text="💜 MoreInf 💜", callback_data="aboutmanu_"
         ),
     ],
     [
@@ -200,7 +200,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="🍀 Back 🍀", callback_data="help_back")]]
                     ),
                 )
 
@@ -228,7 +228,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "𝑰'𝒎 𝒂𝒘𝒂𝒌𝒆 𝒂𝒍𝒓𝒆𝒂𝒅𝒚!😊\n<b>𝑯𝒂𝒗𝒆𝒏'𝒕 𝒔𝒍𝒆𝒑𝒕 𝒔𝒊𝒏𝒄𝒆:</b> <code>{}</code>😝".format(
+            "I'm Awork Arledy!😊\n<b>Havent Sleep Since:</b> <code>{}</code>😝".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -295,7 +295,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "*💠 Help From {} Modual 💠*\𝗻".format(
+                "*💜 Help From {} Modual 💜*\𝗻".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -304,7 +304,7 @@ def help_button(update, context):
                 text=text,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="🔙 Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="🍀 Back 🍀", callback_data="help_back")]]
                 ),
             )
 
@@ -357,8 +357,8 @@ def DewmiBot_about_callback(update, context):
     query = update.callback_query
     if query.data == "aboutmanu_":
         query.message.edit_text(
-            text=f" @szrosebot🇱🇰 - A bot to manage your groups with additional features!"
-            f"\n\n Here's the basic help regarding use of @szrosebot🇱🇰."
+            text=f" @szkingster_bot🇱🇰 - A bot to manage your groups with additional features!"
+            f"\n\n Here's the basic help regarding use of @szkingster_bot🇱🇰."
             f"\n\n Almost all modules usage defined in the help menu, checkout by sending `/help`"
             f"\n\n Report error/bugs click the Button ",
             parse_mode=ParseMode.MARKDOWN,
@@ -367,21 +367,21 @@ def DewmiBot_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Bᴜɢ'ꜱ🐞", url="t.me/slbotzone"
+                            text="👥 Support 👥", url="t.me/slbotzone"
                         ),
                         InlineKeyboardButton(
-                            text="updates💁‍♀️", url="t.me/sl_bot_zone"
+                            text="🗣️ updates 🗣️", url="t.me/szteambots"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Donate 🤕", url="http://t.me/szrosebot?start=donate"
+                            text="👽 Donate 👽", url="http://t.me/szkingster_bot?start=donate"
                         ),
                         InlineKeyboardButton(
-                            text="Inline search 🔎", switch_inline_query_current_chat=""
+                            text="🍓 Inline Query 🍓", switch_inline_query_current_chat=""
                         ),
                     ],
-                    [InlineKeyboardButton(text="Back", callback_data="aboutmanu_back")],
+                    [InlineKeyboardButton(text="🍀 Back 🍀", callback_data="aboutmanu_back")],
                 ]
             ),
         )
@@ -423,7 +423,7 @@ def DewmiBot_about_callback(update, context):
     elif query.data == "aboutmanu_credit":
         query.message.edit_text(
             text=f"*Let's make your group bot effective now*"
-            f"\nCongragulations, @szrosebot🇱🇰 now ready to manage your group."
+            f"\nCongragulations, @szkingster_bot🇱🇰 now ready to manage your group."
             f"\n\n*Admin Tools*"
             f"\nBasic Admin tools help you to protect and powerup your group."
             f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -450,21 +450,21 @@ def DewmiBot_about_callback(update, context):
         )
     elif query.data == "aboutmanu_spamprot":
         query.message.edit_text(
-            text="* @szrosebot🇱🇰 support chats*"
+            text="* @szkingster_bot🇱🇰 support chats*"
             "\nJoin Support Group/Channel",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Owener channel ", url="https://t.me/FreeNetSL"),
-                    InlineKeyboardButton(text="Owner group ", url="https://t.me/supunmasl"),
+                    InlineKeyboardButton(text="🙋‍♀️ Owener channel 🙋‍♀️", url="https://t.me/FreeNetSL"),
+                    InlineKeyboardButton(text="👩‍⚖️ Owner group 👩‍⚖️", url="https://t.me/supunmasl"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/slbotzone"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/sl_bot_zone"),
+                    InlineKeyboardButton(text="👤 Sᴜᴘᴘᴏʀᴛ 👤", url="https://t.me/slbotzone"),
+                    InlineKeyboardButton(text="👥 Uᴘᴅᴀᴛᴇꜱ 👥", url="https://t.me/szteambots"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto"),
+                    InlineKeyboardButton(text="🍀 Back 🍀", callback_data="aboutmanu_howto"),
                  
                  ]
                 ]
@@ -472,7 +472,7 @@ def DewmiBot_about_callback(update, context):
         )
     elif query.data == "aboutmanu_tac":
         query.message.edit_text(
-            text=f"* CREDITS  FOR @szrosebot🇱🇰  DEV *\n"
+            text=f"* CREDITS  FOR @szkingster_bot🇱🇰  DEV *\n"
             f"\n Here you can find information about the bots I coded and the people who helped me create Rose"
             f"\n Special credits [hirunaofficial](https://github.com/hirunaofficial/Telegram-Group-Management-Bot-DewmiBot)  & [Anikivictor](https://github.com/Damantha126/The-Anki-Vector)"
             f"\n Finally my special thanks to you for using this bot",
@@ -481,7 +481,7 @@ def DewmiBot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Dewmibot", url="https://t.me/sltechzoneofficial"),
+                    InlineKeyboardButton(text="Ominda", url="https://t.me/omindas"),
                     InlineKeyboardButton(text="Aniki victor bot", url="https://t.me/ankivectorUpdates"),
                  ],
                  [
@@ -493,7 +493,7 @@ def DewmiBot_about_callback(update, context):
                     InlineKeyboardButton(text="innexia bot", url="https://github.com/DarkCybers/innexia/blob/Sammy/innexiaBot"),
                  ],   
                  [
-                    InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto"),
+                    InlineKeyboardButton(text="🍀 Back 🍀", callback_data="aboutmanu_howto"),
                  
                  ]
                 ]
@@ -536,13 +536,13 @@ def get_help(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help and commands",
+                            text="🎃 Help and commands 🎃",
                             callback_data="help_back",
                         )
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Video play help",
+                            text="📺 Video play help 📺",
                             url="https://t.me/SL_bot_zone/507",
                         )
                     ],
@@ -563,7 +563,7 @@ def get_help(update, context):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                [[InlineKeyboardButton(text="🍀 Back 🍀", callback_data="help_back")]]
             ),
         )
 
@@ -635,7 +635,7 @@ def settings_button(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="🍀 Back 🍀",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -809,7 +809,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "𝖄𝖊𝖘 𝕴'𝖒 𝖆𝖑𝖎𝖛𝖊 🤭")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "♻️ I'Ve Updated ! I'M Now Working 🎃")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
