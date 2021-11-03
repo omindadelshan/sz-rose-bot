@@ -104,7 +104,7 @@ BUTTONS = [
         ),
     ],
     [
-        InlineKeyboardButton(text"🎃 Help Commands 🎃", callback_data="help_back"),
+        InlineKeyboardButton(text="🎃 Help Commands 🎃", callback_data="help_back"),
     ],
 ]
 IMPORTED = {}
